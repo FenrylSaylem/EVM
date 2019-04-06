@@ -3,13 +3,20 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
+    <ion-card class="wecard">
       <ion-card-header>
-        <ion-card-subtitle>Welcome</ion-card-subtitle>
+        <ion-card-subtitle>Welcome to the<div id="evstore"><img src="assets/evstore.png" style="vertical-align:middle"></div></ion-card-subtitle>
         <ion-card-title></ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        <p>Don't crash pls</p>
-      </ion-card-content>
     </ion-card>
+    <ion-item>
+      <ion-toggle name="toggleFlexibility"></ion-toggle> 
+      <ion-label>Flexibility</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-range min="5" max="100" color="secondary" pin=true step=1>
+        <ion-label slot="start">5</ion-label>
+        <ion-label slot="end">100</ion-label>
+      </ion-range>
+    </ion-item>
 </ion-content>
