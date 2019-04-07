@@ -24,7 +24,8 @@ export class Tab1Page {
 
   date = new Date();
   dateSeconds=this.date.getTime();
-  readableDate= formatDate(this.date,"short","en","UTC+1");
+  readableDate= formatDate(this.date,"MMM/d/yy, h:mm a","en","UTC+1");
+  isoDate = this.date.toISOString();
   
 
 

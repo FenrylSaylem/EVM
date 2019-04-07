@@ -18,8 +18,8 @@
     <ion-label text-right>{{readableDate}}</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime [(ngModel)]="datePick" displayFormat="M/D/YY, h:mm a"></ion-datetime>
+    <ion-label>Target Time:</ion-label>
+    <ion-datetime [(ngModel)]="datePick" min="{{isoDate}}" displayFormat="MMM/D/YY, h:mm a"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Target Battery Level</ion-label> 
