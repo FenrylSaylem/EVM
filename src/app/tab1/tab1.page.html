@@ -21,30 +21,45 @@
     <ion-label>Target Time:</ion-label>
     <ion-datetime [(ngModel)]="datePick" min="{{isoDate}}" displayFormat="MMM/D/YY, h:mm a"></ion-datetime>
   </ion-item>
-  <ion-item>
-    <ion-label>Target Battery Level</ion-label> 
-    <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" (ionBlur)=onBlur() color="secondary" pin=true>
-      <ion-label slot="start">5</ion-label>
-      <ion-label slot="end">100</ion-label>
-    </ion-range>
-  </ion-item>
-  <ion-item>
-    <ion-label>Min. Battery Level</ion-label> 
-    <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" color="secondary" pin=true>
-        <ion-label slot="start">5</ion-label>
-        <ion-label slot="end">100</ion-label>
-    </ion-range>
-  </ion-item>
-  <ion-item>
-    <ion-label>Max. Battery Level</ion-label> 
-    <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" (ionBlur)=onBlur() color="secondary" pin=true>
-        <ion-label slot="start">5</ion-label>
-        <ion-label slot="end">100</ion-label>
-    </ion-range>
-  </ion-item>
+  <ion-list>
+      <ion-list-header>
+        Target Battery Level
+        <ion-badge>{{minLevel}}</ion-badge>
+      </ion-list-header> 
+      <ion-item>
+        <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" color="secondary" pin=true>
+            <ion-label slot="start">5</ion-label>
+            <ion-label slot="end">100</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Min. Battery Level
+      <ion-badge>{{minLevel}}</ion-badge>
+    </ion-list-header> 
+    <ion-item>
+      <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" color="secondary" pin=true>
+          <ion-label slot="start">5</ion-label>
+          <ion-label slot="end">100</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Max. Battery Level
+      <ion-badge>{{maxLevel}}</ion-badge>
+    </ion-list-header> 
+    <ion-item>
+      <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" color="secondary" pin=true>
+          <ion-label slot="start">5</ion-label>
+          <ion-label slot="end">100</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
   <ion-item>
     <ion-label>Bonus</ion-label> 
     <ion-label text-right>16</ion-label>
   </ion-item>
-  <ion-button [(ngModel)]="Defbtn" (ionFocus)="onFocus()">Confirm</ion-button>
+  <ion-button [(ngModel)]="conBtn" (ionFocus)="onFocus()" expand="block">Confirm</ion-button>
 </ion-content>
