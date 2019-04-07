@@ -24,42 +24,42 @@
   <ion-list>
       <ion-list-header>
         Target Battery Level
-        <ion-badge>{{minLevel}}</ion-badge>
       </ion-list-header> 
       <ion-item>
-        <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" color="secondary" pin=true>
+        <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
             <ion-label slot="start">5</ion-label>
             <ion-label slot="end">100</ion-label>
         </ion-range>
+        <ion-badge color="secondary">{{targetLevel}}</ion-badge>
       </ion-item>
     </ion-list>
   <ion-list>
     <ion-list-header>
       Min. Battery Level
-      <ion-badge>{{minLevel}}</ion-badge>
-    </ion-list-header> 
+    </ion-list-header>
     <ion-item>
-      <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" color="secondary" pin=true>
+      <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
           <ion-label slot="start">5</ion-label>
           <ion-label slot="end">100</ion-label>
       </ion-range>
+      <ion-badge color="secondary">{{minLevel}}</ion-badge>
     </ion-item>
   </ion-list>
   <ion-list>
     <ion-list-header>
       Max. Battery Level
-      <ion-badge>{{maxLevel}}</ion-badge>
-    </ion-list-header> 
+    </ion-list-header>
     <ion-item>
-      <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" color="secondary" pin=true>
+      <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" debounce="100"  color="secondary" pin=true>
           <ion-label slot="start">5</ion-label>
           <ion-label slot="end">100</ion-label>
       </ion-range>
+      <ion-badge color="secondary">{{maxLevel}}</ion-badge>
     </ion-item>
   </ion-list>
   <ion-item>
     <ion-label>Bonus</ion-label> 
-    <ion-label text-right>16</ion-label>
+    <ion-label text-right>16 </ion-label>
   </ion-item>
   <ion-button name="conBtn" (ionFocus)="onFocus()" expand="block">Confirm</ion-button>
 </ion-content>

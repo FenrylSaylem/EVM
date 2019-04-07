@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { NavController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -11,7 +12,7 @@ export class Tab1Page {
 
   defBtn: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public toastController: ToastController) {
     
   }
 
@@ -25,29 +26,43 @@ export class Tab1Page {
   dateSeconds=this.date.getTime();
   readableDate= formatDate(this.date,"MMM/d/yy, h:mm a","en","UTC+1");
   isoDate = this.date.toISOString();
-  
 
+  ionViewDidEnter() {
+    document.title = "EVStore";
+  }
+  
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Value could not be applied',
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  checkSliderValues(){
+    if(this.minLevel>=this.maxLevel){
+      this.maxLevel=this.minLevel;
+      this.presentToast();
+    }
+    if(this.minLevel>=this.targetLevel){
+      this.maxLevel=this.minLevel;
+      this.presentToast();
+    }
+    if(this.targetLevel>this.maxLevel){
+      this.targetLevel=this.maxLevel;
+      this.presentToast();
+    }
+  }
 
   onChange(){
-    this.minLevel;
-    if (this.minLevel>=this.maxLevel){
-      this.maxLevel=this.minLevel;
-    }
-    if (this.minLevel>=this.targetLevel){
-      this.targetLevel=this.minLevel;
-    }
+    this.checkSliderValues();
   }
   onFocus(){
     this.pickedDate = Date.parse(this.datePick);
     
   }
   onBlur(){
-    if(this.maxLevel<this.minLevel){
-      this.maxLevel=this.minLevel
-    }
-    if (this.minLevel>=this.targetLevel){
-      this.targetLevel=this.minLevel;
-    }
+    this.checkSliderValues();
   }
 
   
