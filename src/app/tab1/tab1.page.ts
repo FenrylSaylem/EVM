@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { NavController } from '@ionic/angular';
-import * as Web3 from 'web3';
 
 @Component({
   selector: 'app-tab1',

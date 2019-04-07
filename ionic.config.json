@@ -1,6 +1,8 @@
 {
   "name": "EVM",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "e2f369c9"
 }
