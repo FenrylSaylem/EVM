@@ -55,14 +55,14 @@ export class Tab1Page {
   }
 
   onChange(){
-    this.checkSliderValues();
+    //this.checkSliderValues();
   }
   onFocus(){
     this.pickedDate = Date.parse(this.datePick);
     
   }
   onBlur(){
-    this.checkSliderValues();
+    //this.checkSliderValues();
   }
 
   

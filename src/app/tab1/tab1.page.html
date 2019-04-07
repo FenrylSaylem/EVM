@@ -26,7 +26,7 @@
         Target Battery Level
       </ion-list-header> 
       <ion-item>
-        <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
+        <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" color="secondary" pin=true>
             <ion-label slot="start">5%</ion-label>
             <ion-label slot="end">100%</ion-label>
         </ion-range>
@@ -38,7 +38,7 @@
       Min. Battery Level
     </ion-list-header>
     <ion-item>
-      <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
+      <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" color="secondary" pin=true>
           <ion-label slot="start">5%</ion-label>
           <ion-label slot="end">100%</ion-label>
       </ion-range>
@@ -50,7 +50,7 @@
       Max. Battery Level
     </ion-list-header>
     <ion-item>
-      <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" debounce="100"  color="secondary" pin=true>
+      <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()"  color="secondary" pin=true>
           <ion-label slot="start">5%</ion-label>
           <ion-label slot="end">100%</ion-label>
       </ion-range>
@@ -60,7 +60,8 @@
   <ion-item color="secondary">
     <ion-label>Bonus</ion-label> 
     <ion-label text-right>16</ion-label>
-    <ion-label text-right><img height=30 src="assets/token.png"></ion-label>
+    <ion-label text-left><img name="tokenimg" height="50" src="assets/token.png"></ion-label>
+    <ion-label></ion-label>
   </ion-item>
   <ion-button name="conBtn" (ionFocus)="onFocus()" expand="block">Confirm</ion-button>
 </ion-content>
