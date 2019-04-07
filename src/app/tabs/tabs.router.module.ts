@@ -34,6 +34,20 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab2',
         pathMatch: 'full'
+      },
+      {
+        path: 'tab3',
+        children: [
+        {
+          path: '',
+          loadChildren: '../tab3/tab3.module#Tab3PageModule'
+        }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/tabs/tab3',
+        pathMatch: 'full'
       }
     ],
   },

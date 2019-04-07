@@ -5,7 +5,7 @@
   <br>
   Karolinger Strasse 94, 45141 Essen, DE<br>
   2 of 2 available, 0,0 km away<br>
-  0.39 &euro;/kwH
+  0.39 &euro;/kWh
 </ion-header>
 
 <ion-content>
@@ -57,9 +57,10 @@
       <ion-badge color="secondary">{{maxLevel}}</ion-badge>
     </ion-item>
   </ion-list>
-  <ion-item>
+  <ion-item color="secondary">
     <ion-label>Bonus</ion-label> 
-    <ion-label text-right>16 </ion-label>
+    <ion-label text-right>16</ion-label>
+    <ion-label text-right><img height=30 src="assets/token.png"></ion-label>
   </ion-item>
   <ion-button name="conBtn" (ionFocus)="onFocus()" expand="block">Confirm</ion-button>
 </ion-content>
