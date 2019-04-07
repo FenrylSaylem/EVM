@@ -14,11 +14,11 @@
     <ion-label text-right>42%</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Current Time:</ion-label>
+    <ion-label>Current Time</ion-label>
     <ion-label text-right>{{readableDate}}</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Target Time:</ion-label>
+    <ion-label>Departure Time</ion-label>
     <ion-datetime [(ngModel)]="datePick" min="{{isoDate}}" displayFormat="MMM/D/YY, h:mm a"></ion-datetime>
   </ion-item>
   <ion-list>
@@ -27,8 +27,8 @@
       </ion-list-header> 
       <ion-item>
         <ion-range min="5" max="100" [(ngModel)]="targetLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
-            <ion-label slot="start">5</ion-label>
-            <ion-label slot="end">100</ion-label>
+            <ion-label slot="start">5%</ion-label>
+            <ion-label slot="end">100%</ion-label>
         </ion-range>
         <ion-badge color="secondary">{{targetLevel}}</ion-badge>
       </ion-item>
@@ -39,8 +39,8 @@
     </ion-list-header>
     <ion-item>
       <ion-range min="5" max="100" [(ngModel)]="minLevel" (ionChange)="onChange()" debounce="100" color="secondary" pin=true>
-          <ion-label slot="start">5</ion-label>
-          <ion-label slot="end">100</ion-label>
+          <ion-label slot="start">5%</ion-label>
+          <ion-label slot="end">100%</ion-label>
       </ion-range>
       <ion-badge color="secondary">{{minLevel}}</ion-badge>
     </ion-item>
@@ -51,8 +51,8 @@
     </ion-list-header>
     <ion-item>
       <ion-range min="5" max="100" [(ngModel)]="maxLevel" (ionChange)="onChange()" debounce="100"  color="secondary" pin=true>
-          <ion-label slot="start">5</ion-label>
-          <ion-label slot="end">100</ion-label>
+          <ion-label slot="start">5%</ion-label>
+          <ion-label slot="end">100%</ion-label>
       </ion-range>
       <ion-badge color="secondary">{{maxLevel}}</ion-badge>
     </ion-item>
